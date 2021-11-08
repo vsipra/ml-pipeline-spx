@@ -43,7 +43,7 @@ def predict_spx(data:Spx):
     dfr=data['dfr']
     infl=data['infl']
 
-    # Pass the dependent feature values 
+    # Pass the feature values 
     prediction = clf.predict([[dp,dy,ep,de,svar,bm,ntis,tbl,lty,ltr,tms,dfy,dfr,infl]])
     if(prediction[0]==0):
         prediction="0"
@@ -56,5 +56,5 @@ def predict_spx(data:Spx):
 #  Run the API with uvicorn
 #    Will run on http://127.0.0.1:8000
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=8000)
     
