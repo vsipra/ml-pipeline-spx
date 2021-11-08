@@ -9,10 +9,9 @@ import pandas as pd
 # Create the app object
 app = FastAPI()
 # Load the pickle file
-pickle_in = open("C:\\Users\\vajih\\OneDrive\\Documents\\Learning\\ml-model-spx\\classifier.pkl","rb")
+pickle_in = open("classifier.pkl","rb")
 clf=pickle.load(pickle_in)
 
-# 3. Index route, opens automatically on http://127.0.0.1:8000
 @app.get('/')
 def index():
     return {'message': 'Hello, World'}
